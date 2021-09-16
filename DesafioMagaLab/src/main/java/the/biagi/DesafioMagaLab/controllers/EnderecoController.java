@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import the.biagi.DesafioMagaLab.viacep.EnderecoViaCep;
+import the.biagi.DesafioMagaLab.model.Endereco;
+import the.biagi.DesafioMagaLab.service.EnderecoService;
 import the.biagi.DesafioMagaLab.viacep.ViaCepService;
 
 @RestController
@@ -16,9 +17,22 @@ public class EnderecoController {
     @Autowired
     ViaCepService viaCepService;
 
-    @GetMapping("/{cep}")
-    public ResponseEntity<EnderecoViaCep> cadastrarEndereco(@PathVariable String cep){
+    @Autowired
+    EnderecoService enderecoService;
 
-        return ResponseEntity.ok(viaCepService.buscarCep(cep));
+    @GetMapping("/{cep}")
+    public ResponseEntity<Endereco> cadastrarEndereco(@PathVariable String cep) {
+
+        if (!enderecoService.validarCep(cep)) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return enderecoService.enderecoExistente(cep);
+        //return ResponseEntity.ok(endereco);
     }
 }
+
+
+
+
+
