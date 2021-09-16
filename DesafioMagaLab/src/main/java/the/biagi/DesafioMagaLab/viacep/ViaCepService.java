@@ -9,6 +9,6 @@ import the.biagi.DesafioMagaLab.model.Endereco;
 public interface ViaCepService {
 
     @GetMapping("{cep}/json")
-    Endereco buscarCep(@PathVariable String cep);
+    EnderecoViaCep buscarCep(@PathVariable String cep);
 
 }

@@ -17,19 +17,15 @@ public class EnderecoService {
     public Boolean validarCep(String cep) {
 
         String cepFormat = cep.replace("-", "");
-        if (!cepFormat.matches("[0-9]+") || cepFormat.length() != 8) {
-            System.out.println("CEP Invalido");
-            return false;
-        }
-        return true;
+        return cepFormat.matches("[0-9]+") && cepFormat.length() == 8;
     }
 
     //Método que modifica o CEP para localizar um existente
-    public ResponseEntity<Endereco> enderecoExistente(String cep) {
+    public ResponseEntity<?> enderecoExistente(String cep) {
         StringBuilder novoCep = new StringBuilder(cep);
         int index = 7;
         do{
-            Endereco endereco = viaCepService.buscarCep(novoCep.toString());
+            Endereco endereco = new Endereco(viaCepService.buscarCep(novoCep.toString()));
             if(endereco.getCep() != null){
                 return ResponseEntity.ok(endereco);
             }

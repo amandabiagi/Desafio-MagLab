@@ -21,14 +21,13 @@ public class EnderecoController {
     EnderecoService enderecoService;
 
     @GetMapping("/{cep}")
-    public ResponseEntity<Endereco> cadastrarEndereco(@PathVariable String cep) {
+    public ResponseEntity<?> cadastrarEndereco(@PathVariable String cep) {
 
         if (!enderecoService.validarCep(cep)) {
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.status(404).body("CEP inválido");
         }
-
         return enderecoService.enderecoExistente(cep);
-        //return ResponseEntity.ok(endereco);
+
     }
 }
 

@@ -1,20 +1,22 @@
 package the.biagi.DesafioMagaLab.model;
 
+import the.biagi.DesafioMagaLab.viacep.EnderecoViaCep;
+
 public class Endereco {
 
 
     private String cep;
-    private String logradouro;
+    private String rua;
     private String bairro;
-    private String localidade;
-    private String uf;
+    private String cidade;
+    private String estado;
 
-    public Endereco(String cep, String logradouro, String bairro, String localidade, String uf) {
-        this.cep = cep;
-        this.logradouro = logradouro;
-        this.bairro = bairro;
-        this.localidade = localidade;
-        this.uf = uf;
+    public Endereco(EnderecoViaCep enderecoViaCep) {
+        this.cep = enderecoViaCep.getCep();
+        this.rua = enderecoViaCep.getLogradouro();
+        this.bairro = enderecoViaCep.getBairro();
+        this.cidade = enderecoViaCep.getLocalidade();
+        this.estado = enderecoViaCep.getUf();
     }
 
     public Endereco() {
@@ -28,12 +30,12 @@ public class Endereco {
         this.cep = cep;
     }
 
-    public String getLogradouro() {
-        return logradouro;
+    public String getRua() {
+        return rua;
     }
 
-    public void setLogradouro(String logradouro) {
-        this.logradouro = logradouro;
+    public void setRua(String rua) {
+        this.rua = rua;
     }
 
     public String getBairro() {
@@ -44,19 +46,19 @@ public class Endereco {
         this.bairro = bairro;
     }
 
-    public String getLocalidade() {
-        return localidade;
+    public String getCidade() {
+        return cidade;
     }
 
-    public void setLocalidade(String localidade) {
-        this.localidade = localidade;
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
     }
 
-    public String getUf() {
-        return uf;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setUf(String uf) {
-        this.uf = uf;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 }
