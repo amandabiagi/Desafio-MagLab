@@ -20,6 +20,8 @@ public class EnderecoService {
         return cepFormat.matches("[0-9]+") && cepFormat.length() == 8;
     }
 
+
+
     //Método que modifica o CEP para localizar um existente
     public ResponseEntity<?> enderecoExistente(String cep) {
         StringBuilder novoCep = new StringBuilder(cep);
