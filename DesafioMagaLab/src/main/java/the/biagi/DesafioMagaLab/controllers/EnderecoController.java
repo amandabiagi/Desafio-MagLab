@@ -12,7 +12,7 @@ import the.biagi.DesafioMagaLab.service.EnderecoService;
 import the.biagi.DesafioMagaLab.viacep.ViaCepService;
 
 @RestController
-@RequestMapping("/endereco")
+@RequestMapping("/enderecos")
 public class EnderecoController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(EnderecoController.class);
