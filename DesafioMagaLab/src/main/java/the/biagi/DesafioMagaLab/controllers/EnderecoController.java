@@ -18,9 +18,6 @@ public class EnderecoController {
     private static final Logger LOGGER = LoggerFactory.getLogger(EnderecoController.class);
 
     @Autowired
-    ViaCepService viaCepService;
-
-    @Autowired
     EnderecoService enderecoService;
 
     @GetMapping("/{cep}")
