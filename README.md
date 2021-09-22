@@ -1,6 +1,6 @@
-# Back-end desafio Luiza Lab!
+# Back-end desafio LuizaLabs!
 
-### Projeto desenvolvido para um processo seletivo na LuizaLab!
+### Projeto desenvolvido para um processo seletivo na LuizaLabs!
 
  Esse projeto consiste em preencher automaticamente os campos de RUA, BAIRRO, CIDADE e ESTADO, a partir do CEP fornecido, 
  é necessário cumprir com alguns requisitos de validação. A API precisa ter autorização para ser acessada.  
@@ -37,7 +37,7 @@
 
 ##EndPoints
 ### localhost:8080/usuarios 
-Tipo: [POST]  
+Tipo: <span style="color: orange">[POST]  
 
 RequestBody: Usuario
 
@@ -60,7 +60,7 @@ Exemplo de envio:
 Possíveis respostas: 200, 400.
 
 ### localhost:8080/enderecos/{cep}
-Tipo: [GET] 
+Tipo: <span style="color: orange">[GET] 
 
 RequestBody:
 
@@ -71,7 +71,7 @@ Função: consulta de um endereço preenchido utilizando apenas o cep.
 Possíveis respostas: 404 (Cep inválido), 200 (Endereco), 404.
 
 ###localhost:8080/autenticacoes
-Tipo: [POST]
+Tipo: <span style="color: orange"> [POST]
 
 RequestBody:
 
