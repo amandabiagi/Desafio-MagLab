@@ -35,9 +35,9 @@
 
 ---
 
-##EndPoints
+## EndPoints
 ### localhost:8080/usuarios 
-Tipo: <span style="color: orange">[POST]  
+Tipo: [POST]  
 
 RequestBody: Usuario
 
@@ -60,7 +60,7 @@ Exemplo de envio:
 Possíveis respostas: 200, 400.
 
 ### localhost:8080/enderecos/{cep}
-Tipo: <span style="color: orange">[GET] 
+Tipo: [GET] 
 
 RequestBody:
 
@@ -70,7 +70,7 @@ Função: consulta de um endereço preenchido utilizando apenas o cep.
 
 Possíveis respostas: 404 (Cep inválido), 200 (Endereco), 404.
 
-###localhost:8080/autenticacoes
+### localhost:8080/autenticacoes
 Tipo: <span style="color: orange"> [POST]
 
 RequestBody:
@@ -91,10 +91,10 @@ Exemplo de envio:
 
 Possíveis respostas: 200 (Token), 404 (Endereco).
 
-###localhost:8080/swagger-ui.html
+### localhost:8080/swagger-ui.html
 Função: Acessar o swagger.
 
-###localhost:8081
+### localhost:8081
 Esse endpoint é para visualizar as métricas e gráficos com os dados coletados da API principal em uma aplicação web.
 
 É necessário iniciar o projeto `monitoramento.api` para conseguir acessa-lo
