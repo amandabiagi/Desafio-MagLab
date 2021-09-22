@@ -1,22 +1,25 @@
 package the.biagi.DesafioMagaLab.controllers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import the.biagi.DesafioMagaLab.LuizaLabApplication;
 import the.biagi.DesafioMagaLab.model.Usuario;
 import the.biagi.DesafioMagaLab.repositories.UsuarioRepository;
 
 import javax.validation.Valid;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/usuarios")
 public class UsuarioController {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(UsuarioController.class);
 
     @Autowired
     UsuarioRepository usuarioRepository;
@@ -27,9 +30,10 @@ public class UsuarioController {
             BCryptPasswordEncoder criptografia = new BCryptPasswordEncoder();
             usuario.setSenhaUsuario(criptografia.encode(usuario.getSenhaUsuario()));
             usuarioRepository.save(usuario);
+            LOGGER.info("Usuário criado");
             return ResponseEntity.created(null).build();
         }
-
+        LOGGER.info("Problema ao criar um usuário");
         return ResponseEntity.badRequest().build();
     }
 }

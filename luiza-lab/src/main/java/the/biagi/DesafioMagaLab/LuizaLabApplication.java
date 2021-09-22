@@ -23,12 +23,12 @@ import java.util.List;
 @EnableFeignClients
 @SpringBootApplication
 @EnableSwagger2
-public class DesafioMagaLabApplication {
-	private static final Logger LOGGER = LoggerFactory.getLogger(DesafioMagaLabApplication.class);
+public class LuizaLabApplication {
+	private static final Logger LOGGER = LoggerFactory.getLogger(LuizaLabApplication.class);
 
 	public static void main(String[] args) {
 		LOGGER.info("Iniciando API de cadastro de endereco");
-		SpringApplication.run(DesafioMagaLabApplication.class, args);
+		SpringApplication.run(LuizaLabApplication.class, args);
 		LOGGER.info("API iniciada com sucesso");
 
 	}

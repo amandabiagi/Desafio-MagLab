@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import the.biagi.DesafioMagaLab.service.EnderecoService;
-import the.biagi.DesafioMagaLab.viacep.ViaCepService;
 
 @RestController
 @RequestMapping("/enderecos")
@@ -24,10 +23,10 @@ public class EnderecoController {
     public ResponseEntity<?> cadastrarEndereco(@PathVariable String cep) {
 
         if (!enderecoService.validarCep(cep)) {
-            LOGGER.info("Cep invalido.");
+            LOGGER.info("CEP inválido.");
             return ResponseEntity.status(404).body("CEP inválido");
         }
-        LOGGER.info("Retorno de endereço com sucesso");
+        LOGGER.info("Endereço retornado");
         return enderecoService.enderecoExistente(cep);
 
     }

@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>the.biagi</groupId>
-	<artifactId>DesafioMagaLab</artifactId>
+	<artifactId>luiza-lab</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>DesafioMagaLab</name>
+	<name>luiza-lab</name>
 	<description>Busca e preenchimento automático de endereço por CEP</description>
 	<properties>
 		<java.version>11</java.version>
@@ -72,7 +72,7 @@
 			<version>2.3.1</version>
 		</dependency>
 
-		<!-- Monitoramento API -->
+		<!-- JPA -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>

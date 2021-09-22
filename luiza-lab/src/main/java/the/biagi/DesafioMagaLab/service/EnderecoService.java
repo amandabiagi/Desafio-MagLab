@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import the.biagi.DesafioMagaLab.DesafioMagaLabApplication;
 import the.biagi.DesafioMagaLab.model.Endereco;
 import the.biagi.DesafioMagaLab.viacep.ViaCepService;
 

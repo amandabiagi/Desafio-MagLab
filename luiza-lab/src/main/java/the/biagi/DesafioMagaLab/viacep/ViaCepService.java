@@ -3,7 +3,6 @@ package the.biagi.DesafioMagaLab.viacep;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import the.biagi.DesafioMagaLab.model.Endereco;
 
 @FeignClient(name = "ViaCep", url = "http://viacep.com.br/ws/")
 public interface ViaCepService {
