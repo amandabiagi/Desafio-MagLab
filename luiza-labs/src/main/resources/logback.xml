@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <property name="DIRETORIO-LOG" value="logs-api"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>{ "timestamp": %d{dd-MM-yyyy HH:mm:ss.SSS}, "message": %msg, "logger_name": %logger{35}, "thread_name": [%thread], "level": %-5level }%n</pattern>
+      </encoder>
+    </appender>
+
+
+    <appender name="splunk" class="ch.qos.logback.core.FileAppender">
+        <file>${DIRETORIO-LOG:-env/}/logs.txt</file>
+        <append>false</append>
+        <encoder>
+            <pattern>%d{dd-MM-yyyy HH:mm:ss.SSS} | %-4relative | [%thread] | %-5level | %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <logger name="br.com.luizalabs" level="INFO"  >
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+    <root level="DEBUG">
+        <appender-ref ref="splunk"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>
+
+
