@@ -55,8 +55,8 @@ public class LuizaLabsApplication {
 
 	private ApiInfo info() {
 		return new ApiInfoBuilder()
-				.title("Desafio MagaLab")
-				.description("API Rest de cadastro de endereço")
+				.title("Desafio Luizalabs")
+				.description("API Rest de cadastro de endereco")
 				.termsOfServiceUrl("http://localhost:8080")
 				.license("")
 				.licenseUrl("")
